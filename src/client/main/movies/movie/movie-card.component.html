@@ -1,0 +1,12 @@
+<div class="col-md-4 col-sm-6">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <img src="{{item.image}}">
+            <h3>{{item.title}}</h3>
+            <p>{{item.releaseDate | date:"dd-MMM-yy"}}</p>
+            <p *ngIf="!isMovieReleased(item.releaseDate)">Not Rated</p>
+            <p *ngIf="isMovieReleased(item.releaseDate)">Rating {{item.rating}}</p>
+            <star-rating [disabled]="isMovieReleased(item.releaseDate)" [rating]="isMovieReleased(item.releaseDate) ? item.rating : 0" (onRate)="onRate($event, item)"></star-rating>
+        </div>
+    </div>
+</div>

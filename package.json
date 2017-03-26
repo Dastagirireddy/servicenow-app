@@ -1,0 +1,50 @@
+{
+    "name": "servicenow-app",
+    "version": "1.0.0",
+    "description": "Service now sample MEAN stack assignment",
+    "main": "server.js",
+    "scripts": {
+        "test": "karma start",
+        "build": "webpack --progress --watch",
+        "production": "webpack -p --progress",
+        "start": "node server.js"
+    },
+    "engines": {
+        "node": ">=4.4.0",
+        "npm": ">=3.9.5"
+    },
+    "dependencies": {
+        "@angular/common": "~2.4.0",
+        "@angular/compiler": "~2.4.0",
+        "@angular/core": "~2.4.0",
+        "@angular/forms": "~2.4.0",
+        "@angular/http": "~2.4.0",
+        "@angular/platform-browser": "~2.4.0",
+        "@angular/platform-browser-dynamic": "~2.4.0",
+        "@angular/router": "~3.4.0",
+        "body-parser": "^1.16.0",
+        "chart.js": "^2.5.0",
+        "core-js": "^2.4.1",
+        "ejs": "latest",
+        "express": "latest",
+        "reflect-metadata": "latest",
+        "rxjs": "5.0.1",
+        "zone.js": "^0.7.4"
+    },
+    "author": "Dastagirireddy",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/jasmine": "^2.5.43",
+        "@types/node": "^7.0.5",
+        "clean-webpack-plugin": "^0.1.15",
+        "copy-webpack-plugin": "^4.0.1",
+        "css-loader": "^0.26.1",
+        "extract-text-webpack-plugin": "^1.0.1",
+        "node-sass": "^4.4.0",
+        "raw-loader": "^0.5.1",
+        "sass-loader": "^4.1.1",
+        "ts-loader": "^2.0.0",
+        "typescript": "latest",
+        "webpack": "^1.14.0"
+    }
+}

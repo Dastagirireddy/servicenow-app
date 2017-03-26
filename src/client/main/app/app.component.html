@@ -1,0 +1,31 @@
+<div>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Service Now</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>
+        	Movie Verdicts
+        	<div class="col-md-4 pull-right">
+        		<select class="form-control" [(ngModel)]="filterName">
+        			<option value="" selected="" disabled="">Select sort by</option>
+        		  <option value="title">Title</option>
+        		  <option value="releaseDate">Release Date</option>
+        		</select>
+        	</div>
+        </h2>
+        <movies [items]="items" (onMovie)="onMovie($event)" [filterName]="filterName">
+        </movies>
+        <h2>Movies Graph</h2>
+        <chart-cmp [xitems]="xitems" [yitems]="yitems" label="No of movies per rating"></chart-cmp>
+    </div>
+</div>
