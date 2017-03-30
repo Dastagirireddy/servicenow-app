@@ -1,18 +1,25 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, ElementRef, OnChanges, AfterViewInit} from '@angular/core';
+import 'chart.js';
+
+declare var Chart: any;
 
 @Component({
 	selector: 'chart-cmp',
 	template: `
-		<div class="chart"><canvas id="myChart" width="400" height="400"></canvas></div>
-	`,
-	styles: [`.chart{height:500px;}`]
+		<div class="chart"><canvas width="400" height="400"></canvas></div>
+	`
 })
-export class ChartComponent {
+export class ChartComponent implements OnChanges, AfterViewInit{
 	@Input() xitems: Array<any>;
 	@Input() yitems: Array<any>;
 	@Input() label: String;
 	ctx: any;
 	chart: any;
+	el: any;
+
+	constructor(private element: ElementRef) {
+		this.el = this.element.nativeElement;
+	}
 
 	ngOnChanges() {
 		setTimeout(() => {
@@ -36,11 +43,15 @@ export class ChartComponent {
 		      		data: this.yitems,
 		      		backgroundColor: "rgba(255,153,0,0.4)"
 		    	}]
-		  	}
+		  	},
+		  	options: {
+        		responsive: true,
+        		maintainAspectRatio: false
+    		}
 		});
 	}
 
 	ngAfterViewInit() {
-		this.ctx = document.getElementById("myChart");
+		this.ctx = this.el.querySelector('canvas');
 	}
 }

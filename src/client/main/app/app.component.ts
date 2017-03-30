@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {AppService} from './app.service';
-import 'chart.js';
 
 import './app.component.scss';
 

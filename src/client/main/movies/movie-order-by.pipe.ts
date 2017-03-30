@@ -5,8 +5,6 @@ export class OrderByPipe implements PipeTransform {
 
 	transform(arr: Array<any>, filterName: string): Array<any> {
 
-		console.log(arr, filterName);
-
 	    return arr.sort((a,b) => {
 
 	    	if (a[filterName] < b[filterName])
