@@ -13,6 +13,7 @@ export class ChartComponent implements OnChanges, AfterViewInit{
 	@Input() xitems: Array<any>;
 	@Input() yitems: Array<any>;
 	@Input() label: String;
+	@Input() color: String;
 	ctx: any;
 	chart: any;
 	el: any;
@@ -41,7 +42,7 @@ export class ChartComponent implements OnChanges, AfterViewInit{
 		    	datasets: [{
 		      		label: this.label,
 		      		data: this.yitems,
-		      		backgroundColor: "rgba(255,153,0,0.4)"
+		      		backgroundColor: this.color
 		    	}]
 		  	},
 		  	options: {
